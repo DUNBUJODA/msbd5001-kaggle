@@ -359,9 +359,10 @@ def feature_importances(model, feature_desctiption):
 
 def final_predict(model, model_name, test_set):
     y_pred = model.predict(test_set)
-    file = pd.read_csv(r'test.csv') 
-    file['speed'] = y_pred 
-    file.to_csv(r"test_submit_{model}.csv".format(model=model_name), mode='a')
+    file = pd.read_csv(r'test.csv')
+    file_o = {'id': file['id'], 'speed': y_pred}
+    df = pd.DataFrame(file_o)
+    df.to_csv(r"test_submit_{model}.csv".format(model=model_name), index=False)
 
 
 def print_best_score(gsearch, param_test):
@@ -421,11 +422,11 @@ def main():
 
     # evaluate model
     # print_best_score(gsearch, param_test6)
-    # prec = model.score(X_test, y_test)
-    prec = mean_squared_error(model.predict(X_test), y_test)
+    prec = model.score(X_test, y_test)
+    # prec = mean_squared_error(model.predict(X_test), y_test)
     print(prec)
 
-    # final_predict(model, "xgboost", test_set)
+    final_predict(model, "xgboost", test_set)
 
 
 if __name__ == '__main__':
