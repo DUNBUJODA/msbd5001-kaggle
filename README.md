@@ -6,11 +6,11 @@ individual project code repo
 
 ### Codes
 
-I used 6 models to conduct the speed prediction task, among which **randomforest** and **xgboost** was the most two powerful models. My final submissions was the result of xgboost model.
+I used 6 models to conduct the speed prediction task, among which **randomforest** and **xgboost** was the most two powerful models. My final submissions was the result of the **xgboost** model.
 
 ### Running Envionment
 
-| Envionment(for xgboost model) |  |
+| Envionment(for xgboost model) | Description |
 | :---------------------: | :------: |
 | programming languages | Python |
 | required packages | xgboost, sklearn, numpy, pandas, datetime |
@@ -25,3 +25,4 @@ Run `xgboostt.py` directly.
 ### Resulting test.csv file
 
 `test_submit_xgboost.csv`
+
